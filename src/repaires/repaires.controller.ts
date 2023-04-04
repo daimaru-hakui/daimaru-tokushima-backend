@@ -6,10 +6,10 @@ import {
   Delete,
   Param,
   Body,
-} from '@nestjs/common';
-import { RepairesService } from './repaires.service';
-import { CreateRepaireDto } from './dto/create-repaire.dto';
-import { UpdateRepaireDto } from './dto/update-repaire.dto';
+} from '@nestjs/common'
+import { RepairesService } from './repaires.service'
+import { CreateRepaireDto } from './dto/create-repaire.dto'
+import { UpdateRepaireDto } from './dto/update-repaire.dto'
 
 @Controller('repaires')
 export class RepairesController {
@@ -17,26 +17,26 @@ export class RepairesController {
 
   @Get()
   findAll() {
-    return this.repairesService.findAll();
+    return this.repairesService.findAll()
   }
 
   @Get(':id')
   findOne(@Param('id') id: string): string {
-    return this.repairesService.findOne(id);
+    return this.repairesService.findOne(id)
   }
 
   @Post()
   create(@Body() createRepaireDto: CreateRepaireDto) {
-    return this.repairesService.create(createRepaireDto);
+    return this.repairesService.create(createRepaireDto)
   }
 
   @Patch('id')
   update(@Param('id') id: string, @Body() updateRepaireDto: UpdateRepaireDto) {
-    return 'update';
+    return 'update'
   }
 
   @Delete('id')
   remove(@Param('id') id: string) {
-    return `削除${id}`;
+    return `削除${id}`
   }
 }
